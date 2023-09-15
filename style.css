@@ -1,0 +1,262 @@
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700;1,800;1,900&display=swap');
+ 
+ *
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+ }
+/* 
+ body {
+    background: #dedddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+ } */
+ 
+body {
+    background: #87cceb;
+    padding-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 20px;
+}
+
+
+ .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .logo h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Montserrat:ital';
+ }
+
+ .logo h1 span {
+    color: aquamarine;
+    font-family: 'Poppins', sans-serif;
+ }
+ .navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+    margin-top: 20px;
+ }
+
+ .navbar ul li {
+    list-style: none;
+ }
+ .navbar ul a {
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+ }
+
+ .navbar ul a:hover {
+    color: #fff;
+ }
+
+.container {
+    margin-top: 30px;
+    height: 400px;
+    /* width: 550px; */
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    background: #eee;
+}
+
+.container .curved-shape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #dedddd;
+    height: 100%;
+    width: 100%;
+    clip-path: circle(84% at 0 0);
+    z-index: -1;
+}
+
+.container .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content .image-section {
+    position: absolute;
+    left: 5%;
+    top: 18%;
+}
+ img {
+    width: 400px;
+    height: 200px;
+    scale: 0;
+    animation: ShowHide 1s ease forwards,
+    Bounce 4s ease infinite;
+ }
+
+ @keyframes ShowHide {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;
+    }
+ }
+
+ @keyframes  Bounce {
+    0%{
+        transform: translateX(-24px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-24px);
+    }
+ }
+
+ .content .image-section .drop-shadow {
+    height: 15PX;
+    width: 220PX;
+    background: rgba(0,0,0,.4);
+    border-radius: 50%;
+    position: absolute;
+    left: 10%;
+    filter: blur(2px);
+    animation:  ShowHide 1s ease forwards,
+    Bounce1 4s ease infinite;
+ }
+ @keyframes  Bounce1 {
+    0%{
+        transform: translateX(24px);
+        scale: 0;
+    }
+    50%{
+        transform: translateY(0px);
+        scale: 1;
+    }
+    100%{
+        transform: translateY(24px);
+        scale: 0;
+    }
+ }
+
+ .price-section {
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    text-align: center;
+ }
+
+ .price-section h2 {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    animation: Slide .5s ease forwards;
+    opacity: 0;
+    animation-delay: 1s;
+ }
+
+ @keyframes Slide {
+    0%{
+        transform: translateX(200px);
+        opacity: 0;
+        filter: blur(3px);
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+        filter: blur(0px);
+    }
+ }
+
+ .price-section .stars i{
+    color: #fff000;
+    animation: Slide .5s ease forwards;
+    opacity: 0;
+    animation-delay: 1.4s;
+ }
+
+ .price-section h3 {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;
+    animation: Slide .5s ease forwards;
+    opacity: 0;
+    animation-delay: 1.4s;
+ }
+
+ .price-section .btn {
+    padding: 5px;
+    height: 30px;
+    width: 140px;
+    border: 2px solid #222;
+    outline: none;
+    border-radius: 7px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    background: #dedddd;
+    box-shadow: 0 0 5px;
+    cursor: pointer;
+    scale: .9;
+    transition: .4s;
+    animation: Slide .5s ease forwards;
+    opacity: 0;
+    animation-delay: 1.6s;
+ }
+
+ .btn:hover {
+    scale: 1;
+ }
+
+ .content p{
+    max-width: 350px;
+    font-size: 18px;
+    bottom: 10px;
+    position: absolute;
+    right: 10px;
+    animation: Slide .5s ease forwards;
+    opacity: 0;
+    animation-delay: 1.8s;
+ }
+
+
+
+
+/* show and hide
+ img {
+    width: 250px;
+    scale: 0;
+    animation: ShowHide 1s ease forwards,
+    Bounce 4s ease infinite;
+ }
+
+ @keyframes ShowHide {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;
+    }
+ }
+
+ @keyframes  Bounce {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;
+    }
+ } */
